@@ -4,24 +4,12 @@
   </div>
 </div>
 <hr />
-<div class="container">
-  <div class="row">
-    <div class="col-10">
-      <a *ngFor="let trip of trips" href="#" class="list-group-item clearfix">
-        <div class="pull-left">
-          <h4 class="list-group-item-heading">{{ trip.name }}</h4>
-          <p class="list-group-item-text">{{ trip.description }}</p>
-        </div>
-        <span class="pull-right">
-          <img
-            [src]="trip.imagePath"
-            alt="{{ trip.name }}"
-            class="img-responsive"
-            style="max-height: 90px"
-          />
-        </span>
-      </a>
-      <app-trips-item></app-trips-item>
-    </div>
+<div class="row">
+  <div class="col-12">
+    <app-trips-item
+      *ngFor="let tripEl of trips"
+      [trip]="tripEl"
+      (tripSelected)="onTripSelected(tripEl)"
+    ></app-trips-item>
   </div>
 </div>

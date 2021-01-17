@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  name = 'my-second-appijaaaa';
+  loeadeFeature = 'trip';
+  onNavigate(feature: string) {
+    this.loeadeFeature = feature;
+  }
 }
