@@ -7,8 +7,9 @@
 <div class="row">
   <div class="col-12">
     <app-trips-item
-      *ngFor="let tripEl of trips"
+      *ngFor="let tripEl of trips; index as i"
       [trip]="tripEl"
+      [ind]="i"
       (tripSelected)="onTripSelected(tripEl)"
     ></app-trips-item>
   </div>

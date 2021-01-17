@@ -4,13 +4,13 @@
       <div class="row">
         <div class="col-sm-5 form-group" style="margin-left: -20px">
           <label for="name"><span STYLE="font-weight:bold">Name</span></label>
-          <input type="text" id="name" class="form-control" />
+          <input type="text" id="name" class="form-control" #nameInput />
         </div>
         <div class="col-xs-2 form-group">
           <label for="amount"
             ><span STYLE="font-weight:bold">Amount</span></label
           >
-          <input type="number" id="amount" class="form-control" />
+          <input type="number" id="amount" class="form-control" #amountInput />
         </div>
         <div class="row">
           <div class="col-xs-12">
@@ -18,6 +18,7 @@
               class="btn btn-success"
               type="submit"
               style="margin-left: 25px; margin: 5px"
+              (click)="onAdd()"
             >
               Add
             </button>

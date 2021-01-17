@@ -8,6 +8,7 @@ import { Trip } from '../../trips.model';
 })
 export class TripsItemComponent implements OnInit {
   @Input() trip: Trip;
+  @Input() ind: number;
   @Output() tripSelected = new EventEmitter<void>();
   constructor() {}
 

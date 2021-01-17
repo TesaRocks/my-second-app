@@ -11,4 +11,7 @@ export class BackpackComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  onAdd(it: Item) {
+    this.items.push(it);
+  }
 }
