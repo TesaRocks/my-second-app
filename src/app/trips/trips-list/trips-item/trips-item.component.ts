@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Trip } from '../../trips.model';
+import { TripsService } from '../../trips.service';
 
 @Component({
   selector: 'app-trips-item',
@@ -9,11 +10,10 @@ import { Trip } from '../../trips.model';
 export class TripsItemComponent implements OnInit {
   @Input() trip: Trip;
   @Input() ind: number;
-  @Output() tripSelected = new EventEmitter<void>();
-  constructor() {}
+  constructor(private tripsService: TripsService) {}
 
   ngOnInit(): void {}
   onSelectItem() {
-    this.tripSelected.emit();
+    this.tripsService.tripSelected.emit(this.trip);
   }
 }
