@@ -10,6 +10,8 @@ import { BackpackComponent } from './backpack/backpack.component';
 import { BackpackEditComponent } from './backpack/backpack-edit/backpack-edit.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
+import { BasicHighlightDirective } from './shared/basic-highlight.directive';
+import { BestHighlightDirective } from './shared/best-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { FormsModule } from '@angular/forms';
     TripsItemComponent,
     BackpackComponent,
     BackpackEditComponent,
+    BasicHighlightDirective,
+    BestHighlightDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

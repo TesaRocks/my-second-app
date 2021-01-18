@@ -7,6 +7,8 @@
       *ngIf="selectedTrip; else infoText"
       [trip]="selectedTrip"
     ></app-trips-detail>
-    <ng-template #infoText><p>Please select a trip</p></ng-template>
+    <ng-template #infoText
+      ><p appBestHighlight>Please select a trip</p></ng-template
+    >
   </div>
 </div>
