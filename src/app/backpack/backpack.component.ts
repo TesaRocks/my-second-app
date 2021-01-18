@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Item } from '../shared/item.model';
+import { BackpackService } from './backpack.service';
 
 @Component({
   selector: 'app-backpack',
@@ -7,11 +8,13 @@ import { Item } from '../shared/item.model';
   styleUrls: ['./backpack.component.css'],
 })
 export class BackpackComponent implements OnInit {
-  items: Item[] = [new Item('boardshorts', 3), new Item('wax', 2)];
-  constructor() {}
+  items: Item[];
+  constructor(private backpackService: BackpackService) {}
 
-  ngOnInit(): void {}
-  onAdd(it: Item) {
-    this.items.push(it);
+  ngOnInit(): void {
+    this.items = this.backpackService.getItems();
+    this.backpackService.itemsChanged.subscribe((item: Item[]) => {
+      this.items = item;
+    });
   }
 }
