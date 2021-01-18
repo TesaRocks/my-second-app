@@ -1,5 +1,5 @@
 <a href="#" class="list-group-item clearfix" (click)="onSelectItem()">
-  <div class="float-left">
+  <div class="pull-left">
     <h4
       [ngClass]="{ odd: ind % 2 === 0 }"
       [ngStyle]="{ backgroundColor: ind % 2 === 0 ? '#f3f5cb' : 'transparent' }"
@@ -8,7 +8,7 @@
     </h4>
     <p>{{ trip.description }}</p>
   </div>
-  <span class="float-right">
+  <span class="pull-right">
     <img
       [src]="trip.imagePath"
       alt="{{ trip.name }}"
