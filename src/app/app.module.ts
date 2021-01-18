@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 import { BestHighlightDirective } from './shared/best-highlight.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { BestHighlightDirective } from './shared/best-highlight.directive';
     BackpackEditComponent,
     BasicHighlightDirective,
     BestHighlightDirective,
+    DropdownDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
