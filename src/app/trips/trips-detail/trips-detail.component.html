@@ -20,7 +20,11 @@
         Manage Trip <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a appBestHighlight href="#">Add to backpack</a></li>
+        <li>
+          <a appBestHighlight (click)="onAdd()" style="cursor: pointer"
+            >Add to backpack</a
+          >
+        </li>
         <li><a href="#">Edit Trip</a></li>
         <li><a href="#">Delete Trip</a></li>
       </ul>
@@ -31,5 +35,11 @@
   <div class="col-xs-12">{{ trip.description }}</div>
 </div>
 <div class="row">
-  <div class="col-xs-12">Items to carry</div>
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of trip.items">
+        {{ item.name }} - {{ item.amount }}
+      </li>
+    </ul>
+  </div>
 </div>

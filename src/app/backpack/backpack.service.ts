@@ -12,4 +12,8 @@ export class BackpackService {
     this.items.push(it);
     this.itemsChanged.emit(this.items.slice());
   }
+  addManyItems(item: Item[]) {
+    this.items.push(...item);
+    this.itemsChanged.emit(this.items.slice());
+  }
 }
