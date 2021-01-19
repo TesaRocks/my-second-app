@@ -12,4 +12,16 @@
     </ul>
   </div>
 </div>
-<p>{{ indice }}</p>
+<div class="col-xs-4">
+  <p
+    *ngIf="indice; else noChoose"
+    style="border-style: groove; margin-left: -40px; border-color: khaki"
+  >
+    Remeber your current choice is trip number: {{ indice }}
+  </p>
+  <ng-template #noChoose
+    ><h4 appBestHighlight style="text-align: center">
+      No trip is currently selected
+    </h4></ng-template
+  >
+</div>

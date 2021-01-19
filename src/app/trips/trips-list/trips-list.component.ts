@@ -16,6 +16,6 @@ export class TripsListComponent implements OnInit {
     this.trips = this.tripsService.getTrips();
   }
   onWarn2(ind: number) {
-    this.indice.emit(ind);
+    this.indice.emit(ind + 1);
   }
 }

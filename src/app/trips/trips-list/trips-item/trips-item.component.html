@@ -1,11 +1,10 @@
 <a href="#" class="list-group-item clearfix" (click)="onSelectItem()">
   <div class="pull-left">
-    <h4
-      [ngClass]="{ odd: ind % 2 === 0 }"
+    <!-- <h4
       [ngStyle]="{ backgroundColor: ind % 2 === 0 ? '#f3f5cb' : 'transparent' }"
     >
       {{ ind + 1 }}) {{ trip.name }}
-    </h4>
+    </h4> -->
     <p>{{ trip.description }}</p>
   </div>
   <span class="pull-right">

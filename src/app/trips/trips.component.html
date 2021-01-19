@@ -9,8 +9,12 @@
       [indice]="index"
     ></app-trips-detail>
     <ng-template #infoText
-      ><p appBestHighlight>Please select a trip</p></ng-template
+      ><h4 appBestHighlight style="text-align: center">
+        Please select a trip
+      </h4></ng-template
     >
   </div>
 </div>
-<p>You love {{ sportSelection }} yeah!</p>
+<p appBestHighlight *ngIf="sportSelection">
+  You love {{ sportSelection }} yeah!
+</p>

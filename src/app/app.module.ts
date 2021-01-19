@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 import { BestHighlightDirective } from './shared/best-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
+import { DontClickDirective } from './shared/dontClick.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
     BasicHighlightDirective,
     BestHighlightDirective,
     DropdownDirective,
+    DontClickDirective,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
