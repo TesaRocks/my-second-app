@@ -5,10 +5,12 @@
       <app-trips
         *ngIf="loeadeFeature === 'trip'"
         (toB)="toBB($event)"
+        [sportSelection]="sportSelected"
       ></app-trips>
       <app-backpack
         *ngIf="loeadeFeature !== 'trip'"
         [indice]="in"
+        (sport)="onSp($event)"
       ></app-backpack>
     </div>
   </div>

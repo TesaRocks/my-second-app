@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Trip } from './trips.model';
 import { TripsService } from './trips.service';
 
@@ -10,6 +10,7 @@ import { TripsService } from './trips.service';
 export class TripsComponent implements OnInit {
   selectedTrip: Trip;
   index: number;
+  @Input() sportSelection: string;
   @Output() toB = new EventEmitter<number>();
   constructor(private tripsService: TripsService) {}
 

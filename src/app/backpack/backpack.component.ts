@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Item } from '../shared/item.model';
 import { BackpackService } from './backpack.service';
 
@@ -9,7 +9,9 @@ import { BackpackService } from './backpack.service';
 })
 export class BackpackComponent implements OnInit {
   items: Item[];
+  sportChosen: string;
   @Input() indice: number;
+  @Output() sport = new EventEmitter<string>();
   constructor(private backpackService: BackpackService) {}
 
   ngOnInit(): void {
@@ -17,5 +19,9 @@ export class BackpackComponent implements OnInit {
     this.backpackService.itemsChanged.subscribe((item: Item[]) => {
       this.items = item;
     });
+  }
+  onSport(sport: string) {
+    this.sportChosen = sport;
+    this.sport.emit(sport);
   }
 }
