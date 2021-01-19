@@ -9,6 +9,7 @@ import { TripsService } from '../trips.service';
 })
 export class TripsDetailComponent implements OnInit {
   @Input() trip: Trip;
+  @Input() indice: number;
 
   constructor(private tripsService: TripsService) {}
 

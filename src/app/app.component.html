@@ -1,9 +1,15 @@
-<app-header (optionSelected)="onNavigate($event)"></app-header>
+<app-header (optionSelected)="onNavigate($event)" [ind]="in"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-trips *ngIf="loeadeFeature === 'trip'"></app-trips>
-      <app-backpack *ngIf="loeadeFeature !== 'trip'"></app-backpack>
+      <app-trips
+        *ngIf="loeadeFeature === 'trip'"
+        (toB)="toBB($event)"
+      ></app-trips>
+      <app-backpack
+        *ngIf="loeadeFeature !== 'trip'"
+        [indice]="in"
+      ></app-backpack>
     </div>
   </div>
 </div>

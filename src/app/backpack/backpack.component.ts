@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Item } from '../shared/item.model';
 import { BackpackService } from './backpack.service';
 
@@ -9,6 +9,7 @@ import { BackpackService } from './backpack.service';
 })
 export class BackpackComponent implements OnInit {
   items: Item[];
+  @Input() indice: number;
   constructor(private backpackService: BackpackService) {}
 
   ngOnInit(): void {

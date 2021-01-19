@@ -10,6 +10,7 @@
       *ngFor="let tripEl of trips; index as i"
       [trip]="tripEl"
       [ind]="i"
+      (warn)="onWarn2(i)"
     ></app-trips-item>
   </div>
 </div>

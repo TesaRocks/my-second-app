@@ -1,11 +1,12 @@
 <div class="row">
   <div class="col-md-5">
-    <app-trips-list></app-trips-list>
+    <app-trips-list (indice)="onWarn3($event)"></app-trips-list>
   </div>
   <div class="col-md-7">
     <app-trips-detail
       *ngIf="selectedTrip; else infoText"
       [trip]="selectedTrip"
+      [indice]="index"
     ></app-trips-detail>
     <ng-template #infoText
       ><p appBestHighlight>Please select a trip</p></ng-template

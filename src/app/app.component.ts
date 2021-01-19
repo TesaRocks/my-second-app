@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   loeadeFeature = 'trip';
+  in: number;
   onNavigate(feature: string) {
     this.loeadeFeature = feature;
+  }
+  toBB(event: number) {
+    this.in = event;
   }
 }

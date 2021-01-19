@@ -1,4 +1,11 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { Item } from 'src/app/shared/item.model';
 import { BackpackService } from '../backpack.service';
 
@@ -10,6 +17,8 @@ import { BackpackService } from '../backpack.service';
 export class BackpackEditComponent implements OnInit {
   @ViewChild('nameInput', { static: false }) nameInputRef: ElementRef;
   @ViewChild('amountInput', { static: false }) amountInputRef: ElementRef;
+  @ViewChild('sportInput', { static: false }) sportInputRef: ElementRef;
+  @Output() sportType = new EventEmitter<string>();
   constructor(private backpackService: BackpackService) {}
 
   ngOnInit(): void {}
@@ -19,5 +28,6 @@ export class BackpackEditComponent implements OnInit {
       this.amountInputRef.nativeElement.value
     );
     this.backpackService.addItems(newItem);
+    this.sportType.emit(this.sportInputRef.nativeElement.value);
   }
 }
