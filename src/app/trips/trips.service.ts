@@ -14,7 +14,7 @@ export class TripsService {
     ),
     new Trip(
       'Matanzas Chile',
-      'I love Windurfing',
+      'Windurfing Galore',
       'https://as01.epimg.net/chile/imagenes/2018/10/04/deportes_aventura/1538661639_456641_1538661860_noticia_normal.jpg',
       [new Item('board', 1), new Item('mast', 1)]
     ),
