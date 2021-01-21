@@ -6,6 +6,7 @@ import { TripsComponent } from './trips/trips.component';
 import { TripsListComponent } from './trips/trips-list/trips-list.component';
 import { TripsDetailComponent } from './trips/trips-detail/trips-detail.component';
 import { TripsItemComponent } from './trips/trips-list/trips-item/trips-item.component';
+import { TripsStartComponent } from './trips/trips-start/trips-start.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { BackpackEditComponent } from './backpack/backpack-edit/backpack-edit.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +30,7 @@ import { DontClickDirective } from './shared/dontClick.directive';
     BestHighlightDirective,
     DropdownDirective,
     DontClickDirective,
+    TripsStartComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

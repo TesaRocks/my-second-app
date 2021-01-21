@@ -1,10 +1,25 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BackpackComponent } from './backpack/backpack.component';
+import { TripsDetailComponent } from './trips/trips-detail/trips-detail.component';
+import { TripsStartComponent } from './trips/trips-start/trips-start.component';
+import { TripsComponent } from './trips/trips.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/trips', pathMatch: 'full' },
+  {
+    path: 'trips',
+    component: TripsComponent,
+    children: [
+      { path: '', component: TripsStartComponent },
+      { path: ':id', component: TripsDetailComponent },
+    ],
+  },
+  { path: 'backpack', component: BackpackComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

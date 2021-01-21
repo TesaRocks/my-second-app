@@ -1,19 +1,8 @@
-<app-header (optionSelected)="onNavigate($event)" [ind]="in"></app-header>
+<app-header [ind]="in"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-trips
-        *ngIf="loeadeFeature === 'trip'"
-        (toB)="toBB($event)"
-        [sportSelection]="sportSelected"
-      ></app-trips>
-      <app-backpack
-        *ngIf="loeadeFeature !== 'trip'"
-        [indice]="in"
-        (sport)="onSp($event)"
-      ></app-backpack>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
-
-<!-- <router-outlet></router-outlet> -->

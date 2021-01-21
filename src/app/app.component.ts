@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  loeadeFeature = 'trip';
+  //loeadeFeature = 'trip';
   in: number;
   sportSelected: string;
-  onNavigate(feature: string) {
-    this.loeadeFeature = feature;
-  }
+  //onNavigate(feature: string) {
+  // this.loeadeFeature = feature;
+  //}
   toBB(event: number) {
     this.in = event;
   }

@@ -3,16 +3,7 @@
     <app-trips-list (indice)="onWarn3($event)"></app-trips-list>
   </div>
   <div class="col-md-7">
-    <app-trips-detail
-      *ngIf="selectedTrip; else infoText"
-      [trip]="selectedTrip"
-      [indice]="index"
-    ></app-trips-detail>
-    <ng-template #infoText
-      ><h4 appBestHighlight style="text-align: center">
-        Please select a trip
-      </h4></ng-template
-    >
+    <router-outlet></router-outlet>
   </div>
 </div>
 <p appBestHighlight *ngIf="sportSelection">

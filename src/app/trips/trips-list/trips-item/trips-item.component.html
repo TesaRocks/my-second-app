@@ -1,4 +1,9 @@
-<a href="#" class="list-group-item clearfix" (click)="onSelectItem()">
+<a
+  style="cursor: pointer"
+  [routerLink]="[ind]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+>
   <div class="pull-left">
     <h4
       [ngStyle]="{ backgroundColor: ind % 2 === 0 ? '#f3f5cb' : 'transparent' }"

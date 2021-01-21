@@ -26,4 +26,7 @@ export class TripsService {
   addItemToBackpack(item: Item[]) {
     this.backpackService.addManyItems(item);
   }
+  getTrip(id: number) {
+    return this.trips[id];
+  }
 }

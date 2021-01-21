@@ -11,7 +11,7 @@ export class TripsComponent implements OnInit {
   selectedTrip: Trip;
   index: number;
   @Input() sportSelection: string;
-  @Output() toB = new EventEmitter<number>();
+  @Output() toBackpack = new EventEmitter<number>();
   constructor(private tripsService: TripsService) {}
 
   ngOnInit() {
@@ -21,6 +21,6 @@ export class TripsComponent implements OnInit {
   }
   onWarn3(event: number) {
     this.index = event;
-    this.toB.emit(event);
+    this.toBackpack.emit(event);
   }
 }
