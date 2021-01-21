@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="#" class="navbar-brand"
+      <a class="navbar-brand"
         >Around the globe <span appBasicHighlight>Yeahh!</span></a
       >
     </div>
@@ -11,18 +11,6 @@
         <li routerLinkActive="active">
           <a routerLink="/backpack">Backpack neccessities</a>
         </li>
-        <li
-          style="padding-left: 40px; padding-top: 15px"
-          appDontClick
-          *ngIf="ind; else noSelect"
-        >
-          Trip Selected number: {{ ind }}
-        </li>
-        <ng-template #noSelect
-          ><li>
-            <a href="#">Please dont click that button</a>
-          </li></ng-template
-        >
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>

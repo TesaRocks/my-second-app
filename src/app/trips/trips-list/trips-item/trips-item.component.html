@@ -6,7 +6,7 @@
 >
   <div class="pull-left">
     <h4
-      [ngStyle]="{ backgroundColor: ind % 2 === 0 ? '#f3f5cb' : 'transparent' }"
+      [ngStyle]="{ backgroundColor: ind % 2 === 0 ? '#eb4034' : 'transparent' }"
     >
       {{ ind + 1 }}) {{ trip.name }}
     </h4>
@@ -19,7 +19,19 @@
       class="img-responsive"
       style="max-width: 160px"
     />
-    <button type="button" class="btn btn-warning" (click)="onWarn()">
+    <button
+      type="button"
+      class="btn btn-warning"
+      style="
+        height: 20px;
+        width: 60px;
+        font-size: 10px;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-top: 4px;
+      "
+      (click)="onWarn()"
+    >
       Dont click
     </button>
   </span>

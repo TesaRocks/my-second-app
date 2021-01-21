@@ -4,7 +4,7 @@ import { Directive, HostBinding, HostListener } from '@angular/core';
   selector: '[appDontClick]',
 })
 export class DontClickDirective {
-  @HostBinding('style.color') color: string = '#fcba03';
+  @HostBinding('style.color') color: string = '#eb4034';
   @HostListener('mouseleave') mouseLeave(event: Event) {
     this.color = '#fc03be';
   }

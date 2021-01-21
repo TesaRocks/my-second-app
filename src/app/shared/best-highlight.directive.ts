@@ -10,7 +10,7 @@ import {
   selector: '[appBestHighlight]',
 })
 export class BestHighlightDirective {
-  @HostBinding('style.color') color: string = '#a2ebbb';
+  @HostBinding('style.color') color: string = '#eb4034';
   constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
   @HostListener('mouseenter') mouseenter(eventData: Event) {

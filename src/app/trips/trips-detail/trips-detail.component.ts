@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
@@ -10,12 +10,12 @@ import { TripsService } from '../trips.service';
 })
 export class TripsDetailComponent implements OnInit {
   trip: Trip;
-
   id: number;
 
   constructor(
     private tripsService: TripsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,5 +26,9 @@ export class TripsDetailComponent implements OnInit {
   }
   onAdd() {
     this.tripsService.addItemToBackpack(this.trip.items);
+  }
+  onEditTrip() {
+    this.router.navigate(['edit'], { relativeTo: this.route });
+    //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
   }
 }

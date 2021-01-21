@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Trip } from './trips.model';
 import { TripsService } from './trips.service';
 
@@ -10,8 +10,7 @@ import { TripsService } from './trips.service';
 export class TripsComponent implements OnInit {
   selectedTrip: Trip;
   index: number;
-  @Input() sportSelection: string;
-  @Output() toBackpack = new EventEmitter<number>();
+
   constructor(private tripsService: TripsService) {}
 
   ngOnInit() {
@@ -21,6 +20,10 @@ export class TripsComponent implements OnInit {
   }
   onWarn3(event: number) {
     this.index = event;
-    this.toBackpack.emit(event);
+    if (event % 2 === 0) {
+      alert('Forever WaterSports!');
+    } else {
+      alert('Magic brah!');
+    }
   }
 }

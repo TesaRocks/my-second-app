@@ -12,10 +12,10 @@ export class AppComponent {
   //onNavigate(feature: string) {
   // this.loeadeFeature = feature;
   //}
-  toBB(event: number) {
-    this.in = event;
-  }
-  onSp(sp: string) {
-    this.sportSelected = sp;
-  }
+  // toBB(event: number) {
+  //   this.in = event;
+  // }
+  // onSp(sp: string) {
+  //   this.sportSelected = sp;
+  // }
 }
