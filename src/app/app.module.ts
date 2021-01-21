@@ -15,6 +15,7 @@ import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 import { BestHighlightDirective } from './shared/best-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DontClickDirective } from './shared/dontClick.directive';
+import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DontClickDirective } from './shared/dontClick.directive';
     DropdownDirective,
     DontClickDirective,
     TripsStartComponent,
+    TripsEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

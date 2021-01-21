@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
@@ -10,7 +10,7 @@ import { TripsService } from '../trips.service';
 })
 export class TripsDetailComponent implements OnInit {
   trip: Trip;
-  @Input() indice: number;
+
   id: number;
 
   constructor(
