@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Item } from 'src/app/shared/item.model';
 import { BackpackService } from '../backpack.service';
-import { SportService } from '../../survey/sport.service';
+import { SportService } from '../../sport.service';
 
 @Component({
   selector: 'app-backpack-edit',
@@ -24,6 +24,6 @@ export class BackpackEditComponent implements OnInit {
       this.amountInputRef.nativeElement.value
     );
     this.backpackService.addItems(newItem);
-    this.sportService.onSportChosen(this.sportInputRef.nativeElement.value);
+    this.sportService.sportChosen.emit(this.sportInputRef.nativeElement.value);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SportService } from './sport.service';
+import { ActivateService } from '../activate.service';
+import { SportService } from '../sport.service';
 
 @Component({
   selector: 'app-survey',
@@ -11,12 +12,14 @@ export class SurveyComponent implements OnInit {
   kitesurf = 0;
   windsurf = 0;
   sp: string;
-  constructor(private sportService: SportService) {}
+  constructor(
+    private sportService: SportService,
+    private activateService: ActivateService
+  ) {}
 
   ngOnInit(): void {
     this.sportService.sportChosen.subscribe((sport: string) => {
       this.sp = sport;
-      console.log(this.sp);
 
       // if (sport === 'surf') {
       //   this.surf++;
@@ -30,5 +33,8 @@ export class SurveyComponent implements OnInit {
       //   }
       // }
     });
+  }
+  onActivate() {
+    this.activateService.active.next(true);
   }
 }

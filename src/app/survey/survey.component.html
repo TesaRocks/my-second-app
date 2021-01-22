@@ -1,4 +1,11 @@
-<h1>ggg{{ sp }}ff</h1>
+<li *ngIf="sp; else info">
+  <a appDontClick>Your love most: {{ sp }}</a>
+</li>
+<ng-template #info
+  ><li>
+    <a appBestHighlight>Please answer Survey</a>
+  </li></ng-template
+>
 <div class="row">
   <div class="col-xs-12">
     <h3>Our readers prefer:</h3>
@@ -11,5 +18,10 @@
       <li>Kitesurfing: {{ kitesurf }}</li>
       <li>Windsurfing: {{ windsurf }}</li>
     </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-danger" (click)="onActivate()">Activate</button>
   </div>
 </div>

@@ -1,10 +1,9 @@
-import { EventEmitter, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { BackpackService } from '../backpack/backpack.service';
 import { Item } from '../shared/item.model';
 import { Trip } from './trips.model';
 @Injectable({ providedIn: 'root' })
 export class TripsService {
-  tripSelected = new EventEmitter<Trip>();
   private trips: Trip[] = [
     new Trip(
       'Maui Hawaii',

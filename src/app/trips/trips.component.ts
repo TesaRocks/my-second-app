@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Trip } from './trips.model';
-import { TripsService } from './trips.service';
 
 @Component({
   selector: 'app-trips',
@@ -11,13 +10,9 @@ export class TripsComponent implements OnInit {
   selectedTrip: Trip;
   index: number;
 
-  constructor(private tripsService: TripsService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.tripsService.tripSelected.subscribe((tr: Trip) => {
-      this.selectedTrip = tr;
-    });
-  }
+  ngOnInit() {}
   onWarn3(event: number) {
     this.index = event;
     if (event % 2 === 0) {

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SportService } from '../survey/sport.service';
+import { ActivateService } from '../activate.service';
+import { SportService } from '../sport.service';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,18 @@ import { SportService } from '../survey/sport.service';
 })
 export class HeaderComponent implements OnInit {
   sportChosen: string;
-  constructor(private sportService: SportService) {}
+  activate: boolean;
+  constructor(
+    private sportService: SportService,
+    private activeService: ActivateService
+  ) {}
 
   ngOnInit(): void {
     this.sportService.sportChosen.subscribe((sport: string) => {
       this.sportChosen = sport;
+    });
+    this.activeService.active.subscribe((act) => {
+      this.activate = act;
     });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SportService } from 'src/app/sport.service';
 import { Trip } from '../../trips.model';
 
 @Component({
@@ -10,7 +11,6 @@ export class TripsItemComponent implements OnInit {
   @Input() trip: Trip;
   @Input() ind: number;
   @Output() warn = new EventEmitter<void>();
-
   ngOnInit(): void {}
 
   onWarn() {
