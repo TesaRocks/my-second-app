@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SportService } from '../survey/sport.service';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
+  sportChosen: string;
+  constructor(private sportService: SportService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sportService.sportChosen.subscribe((sport: string) => {
+      this.sportChosen = sport;
+    });
+  }
 }

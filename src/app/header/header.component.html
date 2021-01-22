@@ -11,6 +11,15 @@
         <li routerLinkActive="active">
           <a routerLink="/backpack">Backpack neccessities</a>
         </li>
+        <li *ngIf="sportChosen; else info">
+          <a appDontClick>Your love most: {{ sportChosen }}</a>
+        </li>
+        <ng-template #info
+          ><li>
+            <a appBestHighlight>Please answer Survey</a>
+          </li></ng-template
+        >
+        <li routerLinkActive="active"><a routerLink="/survey">Survey</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>

@@ -16,6 +16,7 @@ import { BestHighlightDirective } from './shared/best-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
 import { DontClickDirective } from './shared/dontClick.directive';
 import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
+import { SurveyComponent } from './survey/survey.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
     DontClickDirective,
     TripsStartComponent,
     TripsEditComponent,
+    SurveyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
