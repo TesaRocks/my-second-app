@@ -32,6 +32,9 @@ export class BackpackComponent implements OnInit, OnDestroy {
       console.log(this.activate);
     });
   }
+  onEditItem(id: number) {
+    this.backpackService.editItem.next(id);
+  }
   ngOnDestroy() {
     this.itemsUpdate.unsubscribe();
   }

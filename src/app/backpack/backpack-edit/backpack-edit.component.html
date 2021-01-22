@@ -1,22 +1,37 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group" style="margin-left: -20px">
           <label for="name"><span STYLE="font-weight:bold">Name</span></label>
-          <input type="text" id="name" class="form-control" #nameInput />
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            name="name"
+            ngModel
+            required
+          />
         </div>
         <div class="col-xs-2 form-group">
           <label for="amount"
             ><span STYLE="font-weight:bold">Amount</span></label
           >
-          <input type="number" id="amount" class="form-control" #amountInput />
+          <input
+            type="number"
+            id="amount"
+            class="form-control"
+            name="amount"
+            ngModel
+            required
+            pattern="^[1-9]+[0-9]*$"
+          />
         </div>
         <div class="col-sm-3 form-group" style="margin-left: -20px">
           <label for="sport"
             ><span STYLE="font-weight:bold">Sport Survey </span></label
           >
-          <input type="text" id="name" class="form-control" #sportInput />
+          <input type="text" id="name" class="form-control" />
         </div>
         <div class="row">
           <div class="col-xs-12">
@@ -24,9 +39,9 @@
               class="btn btn-success"
               type="submit"
               style="margin-left: 25px; margin: 5px"
-              (click)="onAdd()"
+              [disabled]="!f.valid"
             >
-              Add
+              {{ editMode ? "Update" : "Add" }}
             </button>
             <button class="btn btn-danger" type="button" style="margin: 5px">
               Delete
