@@ -10,7 +10,7 @@ import { TripsStartComponent } from './trips/trips-start/trips-start.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { BackpackEditComponent } from './backpack/backpack-edit/backpack-edit.component';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicHighlightDirective } from './shared/basic-highlight.directive';
 import { BestHighlightDirective } from './shared/best-highlight.directive';
 import { DropdownDirective } from './shared/dropdown.directive';
@@ -36,7 +36,7 @@ import { SurveyComponent } from './survey/survey.component';
     TripsEditComponent,
     SurveyComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

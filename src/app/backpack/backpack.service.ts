@@ -25,4 +25,8 @@ export class BackpackService {
     this.items[index] = newItem;
     this.itemsChanged.next(this.items.slice());
   }
+  deleteItem(index: number) {
+    this.items.splice(index, 1);
+    this.itemsChanged.next(this.items.slice());
+  }
 }

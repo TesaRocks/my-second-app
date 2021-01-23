@@ -45,6 +45,14 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
 
     //this.sportService.sportChosen.emit(this.sportInputRef.nativeElement.value);
   }
+  onClear() {
+    this.beForm.reset();
+    this.editMode = false;
+  }
+  onDelete() {
+    this.backpackService.deleteItem(this.editIndex);
+    this.onClear();
+  }
   ngOnDestroy() {
     this.editSub.unsubscribe();
   }

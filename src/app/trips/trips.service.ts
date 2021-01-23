@@ -9,7 +9,7 @@ export class TripsService {
       'Maui Hawaii',
       'Great for WindSurf',
       'https://upload.wikimedia.org/wikipedia/commons/0/09/Hookipa_Maui_Wind_Surfer_James_Brennan_Molokai_Hawaii_-_panoramio.jpg',
-      [new Item('sail', 2), new Item('boom', 1)]
+      [new Item('sail', 2), new Item('boom', 1), new Item('fins', 3)]
     ),
     new Trip(
       'Matanzas Chile',
