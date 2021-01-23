@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { BackpackService } from '../backpack/backpack.service';
 import { Item } from '../shared/item.model';
 import { Trip } from './trips.model';
 @Injectable({ providedIn: 'root' })
 export class TripsService {
+  tripsChanged = new Subject<Trip[]>();
   private trips: Trip[] = [
     new Trip(
       'Maui Hawaii',
@@ -27,5 +29,13 @@ export class TripsService {
   }
   getTrip(id: number) {
     return this.trips[id];
+  }
+  addTrip(trip: Trip) {
+    this.trips.push(trip);
+    this.tripsChanged.next(this.trips.slice());
+  }
+  updateTrip(index: number, newtrip: Trip) {
+    this.trips[index] = newtrip;
+    this.tripsChanged.next(this.trips.slice());
   }
 }

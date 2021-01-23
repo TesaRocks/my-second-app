@@ -36,5 +36,6 @@ export class SurveyComponent implements OnInit {
   }
   onActivate() {
     this.activateService.active.next(true);
+    this.activateService.act = true;
   }
 }

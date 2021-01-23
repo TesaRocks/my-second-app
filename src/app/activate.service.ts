@@ -4,4 +4,5 @@ import { Subject } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class ActivateService {
   active = new Subject<boolean>();
+  act: boolean;
 }

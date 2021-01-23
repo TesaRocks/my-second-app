@@ -18,6 +18,9 @@ export class TripsListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.tripsService.tripsChanged.subscribe((list: Trip[]) => {
+      this.trips = list;
+    });
     this.trips = this.tripsService.getTrips();
   }
   onWarn2(ind: number) {

@@ -12,7 +12,7 @@ import { BackpackService } from './backpack.service';
 })
 export class BackpackComponent implements OnInit, OnDestroy {
   items: Item[];
-  activate: boolean = false;
+  activate: boolean;
   itemsUpdate: Subscription;
 
   constructor(
@@ -27,10 +27,7 @@ export class BackpackComponent implements OnInit, OnDestroy {
         this.items = item;
       }
     );
-    this.activateService.active.subscribe((act) => {
-      this.activate = act;
-      console.log(this.activate);
-    });
+    this.activate = this.activateService.act;
   }
   onEditItem(id: number) {
     this.backpackService.editItem.next(id);

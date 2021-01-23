@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
 @Component({
@@ -28,8 +29,11 @@ export class TripsEditComponent implements OnInit {
   onAddIem() {
     (<FormArray>this.tripForm.get('items')).push(
       new FormGroup({
-        name: new FormControl(),
-        amount: new FormControl(),
+        name: new FormControl(null, Validators.required),
+        amount: new FormControl(null, [
+          Validators.required,
+          Validators.pattern(/^[1-9]+[0-9]*$/),
+        ]),
       })
     );
   }
@@ -47,17 +51,20 @@ export class TripsEditComponent implements OnInit {
         for (let item of trip.items) {
           tripItems.push(
             new FormGroup({
-              name: new FormControl(item.name),
-              amount: new FormControl(item.amount),
+              name: new FormControl(item.name, Validators.required),
+              amount: new FormControl(item.amount, [
+                Validators.required,
+                Validators.pattern(/^[1-9]+[0-9]*$/),
+              ]),
             })
           );
         }
       }
     }
     this.tripForm = new FormGroup({
-      name: new FormControl(tripName),
-      imagePath: new FormControl(tripImage),
-      description: new FormControl(tripDesc),
+      name: new FormControl(tripName, Validators.required),
+      imagePath: new FormControl(tripImage, Validators.required),
+      description: new FormControl(tripDesc, Validators.required),
       items: tripItems,
     });
   }
@@ -65,6 +72,16 @@ export class TripsEditComponent implements OnInit {
     return (<FormArray>this.tripForm.get('items')).controls;
   }
   onSubmit() {
-    console.log(this.tripForm);
+    // const newTrip = new Trip(
+    //   this.tripForm.value.name,
+    //   this.tripForm.value.description,
+    //   this.tripForm.value.imagePath,
+    //   this.tripForm.value.items
+    // );
+    if (this.editMode) {
+      this.tripsService.updateTrip(this.id, this.tripForm.value);
+    } else {
+      this.tripsService.addTrip(this.tripForm.value);
+    }
   }
 }
