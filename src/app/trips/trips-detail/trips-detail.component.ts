@@ -31,4 +31,8 @@ export class TripsDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
     //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route });
   }
+  onDelete() {
+    this.tripsService.deleteTrip(this.id);
+    this.router.navigate(['/']);
+  }
 }

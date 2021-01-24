@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
@@ -16,7 +16,8 @@ export class TripsEditComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private tripsService: TripsService
+    private tripsService: TripsService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -83,5 +84,12 @@ export class TripsEditComponent implements OnInit {
     } else {
       this.tripsService.addTrip(this.tripForm.value);
     }
+    this.onCancel();
+  }
+  onCancel() {
+    this.router.navigate(['../'], { relativeTo: this.route });
+  }
+  onX(index: number) {
+    (<FormArray>this.tripForm.get('items')).removeAt(index);
   }
 }

@@ -1,5 +1,12 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  OnDestroy,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
@@ -8,8 +15,9 @@ import { TripsService } from '../trips.service';
   templateUrl: './trips-list.component.html',
   styleUrls: ['./trips-list.component.css'],
 })
-export class TripsListComponent implements OnInit {
+export class TripsListComponent implements OnInit, OnDestroy {
   trips: Trip[];
+  tripSub: Subscription;
   @Output() indice = new EventEmitter<number>();
   constructor(
     private tripsService: TripsService,
@@ -18,7 +26,7 @@ export class TripsListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.tripsService.tripsChanged.subscribe((list: Trip[]) => {
+    this.tripSub = this.tripsService.tripsChanged.subscribe((list: Trip[]) => {
       this.trips = list;
     });
     this.trips = this.tripsService.getTrips();
@@ -28,5 +36,8 @@ export class TripsListComponent implements OnInit {
   }
   onNewTrip() {
     this.router.navigate(['new'], { relativeTo: this.route });
+  }
+  ngOnDestroy() {
+    this.tripSub.unsubscribe();
   }
 }

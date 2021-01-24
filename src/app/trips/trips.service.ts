@@ -38,4 +38,8 @@ export class TripsService {
     this.trips[index] = newtrip;
     this.tripsChanged.next(this.trips.slice());
   }
+  deleteTrip(index: number) {
+    this.trips.splice(index, 1);
+    this.tripsChanged.next(this.trips.slice());
+  }
 }
