@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ActivateService } from '../activate.service';
+import { ActivateService } from '../shared/activate.service';
 
 import { Item } from '../shared/item.model';
 import { BackpackService } from './backpack.service';

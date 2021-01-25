@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-xs-12">
-    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+    <form (ngSubmit)="onAdd_UpdateItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group" style="margin-left: -20px">
           <label for="name"><span STYLE="font-weight:bold">Name</span></label>
@@ -58,14 +58,48 @@
         </div>
       </div>
     </form>
-    <form>
-      <div class="col-sm-3 form-group" style="margin-left: -20px">
-        <label for="sport"
-          ><span STYLE="font-weight:bold">Sport Survey </span></label
-        >
-        <input type="text" id="name" class="form-control" />
-        <button class="btn btn-secondary" type="submit">Survey</button>
-      </div>
-    </form>
+    <hr />
   </div>
 </div>
+<form #s="ngForm" (ngSubmit)="sport(s)">
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="surf"
+      name="sport"
+      required
+      ngModel
+    />
+    <label class="custom-control-label" for="surf">Surf</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="kitesurf"
+      name="sport"
+      ngModel
+      required
+    />
+    <label class="custom-control-label" for="kitesurf">Kitesurf</label>
+  </div>
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="windsurf"
+      name="sport"
+      ngModel
+      required
+    />
+    <label class="custom-control-label" for="windsurf">Windsurf</label>
+  </div>
+  <div *ngIf="!s.valid">
+    <p appBestHighlight>Please select either value</p>
+  </div>
+  <button type="submit" class="btn btn-warning" [disabled]="!s.valid">
+    Choose Sport
+  </button>
+</form>

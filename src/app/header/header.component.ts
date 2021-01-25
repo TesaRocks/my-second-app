@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivateService } from '../activate.service';
-import { SportService } from '../sport.service';
+import { ActivateService } from '../shared/activate.service';
+import { SportService } from '../shared/sport.service';
 
 @Component({
   selector: 'app-header',

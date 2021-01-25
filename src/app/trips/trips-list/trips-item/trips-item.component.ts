@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SportService } from 'src/app/sport.service';
 import { Trip } from '../../trips.model';
 
 @Component({
