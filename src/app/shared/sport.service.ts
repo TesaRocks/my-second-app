@@ -6,4 +6,5 @@ export class SportService {
   surf = 0;
   kitesurf = 0;
   windsurf = 0;
+  sportSelected: string;
 }

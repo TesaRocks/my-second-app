@@ -1,11 +1,7 @@
-<li *ngIf="sp; else info">
-  <a appDontClick>Your love most: {{ sp }}</a>
-</li>
-<ng-template #info
-  ><li>
-    <a appBestHighlight>Please answer Survey</a>
-  </li></ng-template
->
+<p *ngIf="sp; else info" appDontClick>Your love most: {{ sp | uppercase }}</p>
+<ng-template #info>
+  <p appBestHighlight>Please answer Survey</p>
+</ng-template>
 <div class="row">
   <div class="col-xs-12">
     <h3>Our readers prefer:</h3>
@@ -22,6 +18,6 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-danger" (click)="onActivate()">Activate</button>
+    <button class="btn btn-danger" (click)="onActivate()">Disclaimer</button>
   </div>
 </div>

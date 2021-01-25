@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Trip } from './trips.model';
 
 @Component({
   selector: 'app-trips',
@@ -7,7 +6,6 @@ import { Trip } from './trips.model';
   styleUrls: ['./trips.component.css'],
 })
 export class TripsComponent implements OnInit {
-  selectedTrip: Trip;
   index: number;
 
   constructor() {}

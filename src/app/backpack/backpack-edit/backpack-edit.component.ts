@@ -64,6 +64,8 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
         this.sportService.windsurf++;
         break;
     }
+    this.sportService.sportSelected = sp;
+    this.sportService.sportChosen.next(sp);
   }
   ngOnDestroy() {
     this.editSub.unsubscribe();

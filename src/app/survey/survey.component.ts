@@ -21,6 +21,7 @@ export class SurveyComponent implements OnInit {
     this.surf = this.sportService.surf;
     this.kitesurf = this.sportService.kitesurf;
     this.windsurf = this.sportService.windsurf;
+    this.sp = this.sportService.sportSelected;
   }
   onActivate() {
     this.activateService.active.next(true);
