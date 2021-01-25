@@ -40,7 +40,7 @@
   <div class="col-xs-12">
     <ul class="list-group">
       <li class="list-group-item" *ngFor="let item of trip.items">
-        {{ item.name | shorten }} - {{ item.amount }}
+        {{ item.name | shorten: 20 }} - {{ item.amount }}
       </li>
     </ul>
   </div>
