@@ -9,9 +9,9 @@ export class TripsService {
   private trips: Trip[] = [
     new Trip(
       'Maui Hawaii',
-      'Great for WindSurf',
-      'https://upload.wikimedia.org/wikipedia/commons/0/09/Hookipa_Maui_Wind_Surfer_James_Brennan_Molokai_Hawaii_-_panoramio.jpg',
-      [new Item('sail', 2), new Item('boom', 1), new Item('fins', 3)]
+      'Great for Surf',
+      'https://c.pxhere.com/photos/99/c7/hawaii_wave_maui_surfing_surfboard_pacificisland_pacificislands_sonyalpha-172640.jpg!d',
+      [new Item('surfboard', 2), new Item('gun', 1), new Item('fins', 3)]
     ),
     new Trip(
       'Matanzas Chile',

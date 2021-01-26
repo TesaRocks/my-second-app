@@ -1,0 +1,13 @@
+<div *ngIf="!fillStatus">
+  <button class="btn btn-warning" (click)="onForm()" style="margin-left: 200px">
+    Fill Form
+  </button>
+</div>
+<div *ngIf="formsub">
+  <p>Your preffered board is: {{ formsub.board }}</p>
+  <p>You own: {{ formsub.amount }} boards</p>
+  <div *ngFor="let it of formsub.items">
+    <p>You just added: {{ it.name }}</p>
+    <p>You just added: {{ it.amount }}</p>
+  </div>
+</div>

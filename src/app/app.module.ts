@@ -18,6 +18,7 @@ import { DontClickDirective } from './shared/dontClick.directive';
 import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
 import { SurveyComponent } from './survey/survey.component';
 import { ShortenPipe } from './shared/shorten.pipe';
+import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ShortenPipe } from './shared/shorten.pipe';
     TripsEditComponent,
     SurveyComponent,
     ShortenPipe,
+    TripRaComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
