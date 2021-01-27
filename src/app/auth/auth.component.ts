@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService, AuthResponseData } from './auth.service';
 
@@ -8,7 +9,7 @@ import { AuthService, AuthResponseData } from './auth.service';
   templateUrl: './auth.component.html',
 })
 export class AuthComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
   isLogMode = true;
   isLoading = false;
   error: string = null;
@@ -26,11 +27,12 @@ export class AuthComponent {
     }
     obsAuth.subscribe(
       (resData) => {
-        console.log(resData);
+        //console.log(resData);
         this.isLoading = false;
+        this.router.navigate(['/trips']);
       },
       (errorMessage: string) => {
-        console.log(errorMessage);
+        //console.log(errorMessage);
         this.error = errorMessage;
 
         this.isLoading = false;
