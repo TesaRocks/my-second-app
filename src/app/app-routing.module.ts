@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BackpackComponent } from './backpack/backpack.component';
+import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { SurveyComponent } from './survey/survey.component';
 import { TripsDetailComponent } from './trips/trips-detail/trips-detail.component';
 import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
@@ -29,7 +30,11 @@ const routes: Routes = [
     ],
   },
   { path: 'backpack', component: BackpackComponent },
-  { path: 'survey', component: SurveyComponent },
+  {
+    path: 'survey',
+    component: SurveyComponent,
+    canDeactivate: [CanDeactivateGuard],
+  },
 ];
 
 @NgModule({

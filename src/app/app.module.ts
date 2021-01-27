@@ -20,6 +20,7 @@ import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
 import { SurveyComponent } from './survey/survey.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
+import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [CanDeactivateGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

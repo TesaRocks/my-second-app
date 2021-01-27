@@ -17,6 +17,8 @@ export class TripsStartComponent implements OnInit {
   fillForm: FormGroup;
   @Output() formSub: fillF;
   name2 = 'add items here please';
+  exitBefore = false;
+
   constructor(private router: Router) {}
 
   ngOnInit(): void {
