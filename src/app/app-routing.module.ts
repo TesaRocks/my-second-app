@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BackpackComponent } from './backpack/backpack.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { SurveyComponent } from './survey/survey.component';
 import { TripsDetailComponent } from './trips/trips-detail/trips-detail.component';
@@ -35,6 +36,12 @@ const routes: Routes = [
     component: SurveyComponent,
     canDeactivate: [CanDeactivateGuard],
   },
+  {
+    path: 'not-found',
+    component: PageNotFoundComponent,
+    data: { message: 'Page not Found!' },
+  },
+  { path: '**', redirectTo: '/not-found' },
 ];
 
 @NgModule({

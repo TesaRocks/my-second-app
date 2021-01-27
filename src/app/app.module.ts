@@ -21,6 +21,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { ShortenPipe } from './shared/shorten.pipe';
 import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
     SurveyComponent,
     ShortenPipe,
     TripRaComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
