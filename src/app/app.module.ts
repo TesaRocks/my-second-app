@@ -22,6 +22,7 @@ import { ShortenPipe } from './shared/shorten.pipe';
 import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ShortenPipe,
     TripRaComponent,
     PageNotFoundComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
