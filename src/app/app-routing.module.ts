@@ -4,6 +4,7 @@ import { BackpackComponent } from './backpack/backpack.component';
 import { SurveyComponent } from './survey/survey.component';
 import { TripsDetailComponent } from './trips/trips-detail/trips-detail.component';
 import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
+import { TripsResolverService } from './trips/trips-resolver.service';
 import { TripsStartComponent } from './trips/trips-start/trips-start.component';
 import { TripsComponent } from './trips/trips.component';
 
@@ -15,8 +16,16 @@ const routes: Routes = [
     children: [
       { path: '', component: TripsStartComponent },
       { path: 'new', component: TripsEditComponent },
-      { path: ':id', component: TripsDetailComponent },
-      { path: ':id/edit', component: TripsEditComponent },
+      {
+        path: ':id',
+        component: TripsDetailComponent,
+        resolve: [TripsResolverService],
+      },
+      {
+        path: ':id/edit',
+        component: TripsEditComponent,
+        resolve: [TripsResolverService],
+      },
     ],
   },
   { path: 'backpack', component: BackpackComponent },

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivateService } from '../shared/activate.service';
+import { DataStorageService } from '../shared/data-storage.service';
 import { SportService } from '../shared/sport.service';
 
 @Component({
@@ -12,7 +13,8 @@ export class HeaderComponent implements OnInit {
   activate: boolean;
   constructor(
     private sportService: SportService,
-    private activeService: ActivateService
+    private activeService: ActivateService,
+    private dataStorage: DataStorageService
   ) {}
 
   ngOnInit(): void {
@@ -22,5 +24,11 @@ export class HeaderComponent implements OnInit {
     this.activeService.active.subscribe((act) => {
       this.activate = act;
     });
+  }
+  onSave() {
+    this.dataStorage.storeTrips();
+  }
+  onFetch() {
+    this.dataStorage.fetchTrips().subscribe();
   }
 }
