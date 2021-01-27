@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthComponent } from './auth/auth.component';
 import { BackpackComponent } from './backpack/backpack.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
@@ -36,6 +37,7 @@ const routes: Routes = [
     component: SurveyComponent,
     canDeactivate: [CanDeactivateGuard],
   },
+  { path: 'auth', component: AuthComponent },
   {
     path: 'not-found',
     component: PageNotFoundComponent,

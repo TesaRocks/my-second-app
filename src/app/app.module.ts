@@ -23,6 +23,7 @@ import { TripRaComponent } from './trips/trips-start/trip-ra/trip-ra.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthComponent } from './auth/auth.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AuthComponent } from './auth/auth.component';
     TripRaComponent,
     PageNotFoundComponent,
     AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

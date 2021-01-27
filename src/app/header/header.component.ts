@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ActivateService } from '../shared/activate.service';
 import { DataStorageService } from '../shared/data-storage.service';
 import { SportService } from '../shared/sport.service';
@@ -11,6 +12,7 @@ import { SportService } from '../shared/sport.service';
 export class HeaderComponent implements OnInit {
   sportChosen: string;
   activate: boolean;
+
   constructor(
     private sportService: SportService,
     private activeService: ActivateService,

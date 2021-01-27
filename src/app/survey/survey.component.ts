@@ -24,6 +24,7 @@ export class SurveyComponent implements OnInit, CanComponentDeactivate {
     this.kitesurf = this.sportService.kitesurf;
     this.windsurf = this.sportService.windsurf;
     this.sp = this.sportService.sportSelected;
+    this.activeStatus = this.activateService.act;
   }
   onActivate() {
     this.activateService.active.next(true);

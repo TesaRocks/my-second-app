@@ -9,7 +9,14 @@
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/trips">Trips</a></li>
         <li routerLinkActive="active">
+          <a routerLink="/auth">Authenticate</a>
+        </li>
+        <li routerLinkActive="active">
           <a routerLink="/backpack">Backpack neccessities</a>
+        </li>
+        <li routerLinkActive="active"><a routerLink="/survey">Survey</a></li>
+        <li *ngIf="activate">
+          <a appBestHighlight>Disclaimer Read</a>
         </li>
         <li *ngIf="sportChosen; else info">
           <a appDontClick>Your love most: {{ sportChosen }}</a>
@@ -19,10 +26,6 @@
             <a appBestHighlight>Please answer Survey</a>
           </li></ng-template
         >
-        <li routerLinkActive="active"><a routerLink="/survey">Survey</a></li>
-        <li *ngIf="activate">
-          <a appBestHighlight>Disclaimer Read</a>
-        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>
