@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { AuthService, AuthResponseData } from './auth.service';
 
 @Component({
@@ -43,5 +43,14 @@ export class AuthComponent {
   }
   onSwitchMode() {
     this.isLogMode = !this.isLogMode;
+    const s = new BehaviorSubject(1);
+    s.subscribe(console.log);
+    s.next(2);
+    s.subscribe(console.log);
+    const t = new Subject();
+    t.next(44);
+    t.subscribe(console.log);
+    t.next(33);
+    t.subscribe(console.log);
   }
 }
