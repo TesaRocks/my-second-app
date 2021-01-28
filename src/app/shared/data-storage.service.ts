@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, take, tap } from 'rxjs/operators';
+import { exhaustMap, map, take, tap } from 'rxjs/operators';
 import { Trip } from '../trips/trips.model';
 import { TripsService } from '../trips/trips.service';
 import { AuthService } from '../auth/auth.service';
@@ -23,7 +23,6 @@ export class DataStorageService {
       });
   }
   fetchTrips() {
-    this.authService.user.pipe(take(1)).subscribe((user) => {});
     return this.http
       .get<Trip[]>(
         'https://my-second-app-9ade6-default-rtdb.firebaseio.com/trips.json'
