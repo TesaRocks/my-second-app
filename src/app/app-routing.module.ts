@@ -11,6 +11,8 @@ import { TripsEditComponent } from './trips/trips-edit/trips-edit.component';
 import { TripsResolverService } from './trips/trips-resolver.service';
 import { TripsStartComponent } from './trips/trips-start/trips-start.component';
 import { TripsComponent } from './trips/trips.component';
+import { VipPageComponent } from './vip/vip-page/vip-page.component';
+import { VipComponent } from './vip/vip.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/trips', pathMatch: 'full' },
@@ -40,6 +42,8 @@ const routes: Routes = [
     canDeactivate: [CanDeactivateGuard],
   },
   { path: 'auth', component: AuthComponent },
+  { path: 'vip', component: VipComponent },
+  { path: 'vipPage', component: VipPageComponent },
   {
     path: 'not-found',
     component: PageNotFoundComponent,

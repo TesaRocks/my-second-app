@@ -25,6 +25,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AuthComponent } from './auth/auth.component';
 import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { VipComponent } from './vip/vip.component';
+import { VipPageComponent } from './vip/vip-page/vip-page.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
     PageNotFoundComponent,
     AuthComponent,
     LoadingSpinnerComponent,
+    VipComponent,
+    VipPageComponent,
   ],
   imports: [
     BrowserModule,
