@@ -11,11 +11,13 @@
         <li *ngIf="!isAuthenticated" routerLinkActive="active">
           <a routerLink="/auth">Authenticate</a>
         </li>
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
           <a routerLink="/backpack">Backpack neccessities</a>
         </li>
-        <li routerLinkActive="active"><a routerLink="/survey">Survey</a></li>
-        <li *ngIf="activate">
+        <li routerLinkActive="active" *ngIf="isAuthenticated">
+          <a routerLink="/survey">Survey</a>
+        </li>
+        <li *ngIf="activate && isAuthenticated">
           <a appBestHighlight>Disclaimer Read</a>
         </li>
         <li *ngIf="sportChosen; else info">

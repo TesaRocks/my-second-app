@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthResponseData } from '../auth/auth.service';
 import { VipService } from './vip.service';
 
 @Component({
@@ -19,19 +21,23 @@ export class VipComponent implements OnInit {
     if (!form.valid) {
       return;
     }
+    let authObs: Observable<AuthResponseData>;
     this.isLoading = true;
     if (!this.isVip) {
-      this.vipService.signup(form.value.email, form.value.password).subscribe(
-        (resData) => {
-          this.isLoading = false;
-          this.router.navigate(['/vipPage']);
-        },
-        (errorMessage: string) => {
-          this.error = errorMessage;
-          this.isLoading = false;
-        }
-      );
+      authObs = this.vipService.signup(form.value.email, form.value.password);
+    } else {
+      authObs = this.vipService.login(form.value.email, form.value.password);
     }
+    authObs.subscribe(
+      () => {
+        this.isLoading = false;
+        this.router.navigate(['/vipPage']);
+      },
+      (errorMessage: string) => {
+        this.error = errorMessage;
+        this.isLoading = false;
+      }
+    );
     form.reset();
   }
   onSwitch() {

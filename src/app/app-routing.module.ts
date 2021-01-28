@@ -35,10 +35,15 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'backpack', component: BackpackComponent },
+  {
+    path: 'backpack',
+    component: BackpackComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'survey',
     component: SurveyComponent,
+    canActivate: [AuthGuard],
     canDeactivate: [CanDeactivateGuard],
   },
   { path: 'auth', component: AuthComponent },
