@@ -7,7 +7,10 @@
     <h3>Our readers prefer:</h3>
   </div>
 </div>
-<div class="row">
+<div *ngIf="isLoading" style="text-align: center">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+<div class="row" *ngIf="!isLoading">
   <div class="col-xs-10">
     <ul>
       <li>Surfing total: {{ surf }}</li>

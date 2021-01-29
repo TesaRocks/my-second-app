@@ -14,17 +14,28 @@ export class SurveyComponent implements OnInit, CanComponentDeactivate {
   windsurf = 0;
   sp: string;
   activeStatus = false;
+  isLoading = false;
   constructor(
     private sportService: SportService,
     private activateService: ActivateService
   ) {}
 
   ngOnInit(): void {
-    this.surf = this.sportService.surf;
-    this.kitesurf = this.sportService.kitesurf;
-    this.windsurf = this.sportService.windsurf;
+    this.isLoading = true;
     this.sp = this.sportService.sportSelected;
     this.activeStatus = this.activateService.act;
+    this.sportService.getSport().subscribe((sp: string[]) => {
+      for (let sport of sp) {
+        if (sport === 'surf') {
+          this.surf++;
+        } else if (sport === 'kitesurf') {
+          this.kitesurf++;
+        } else if (sport === 'windsurf') {
+          this.windsurf++;
+        }
+      }
+      this.isLoading = false;
+    });
   }
   onActivate() {
     this.activateService.active.next(true);
