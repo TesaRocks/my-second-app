@@ -53,17 +53,6 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
   }
   sport(form: NgForm) {
     let sp = form.value['sport'];
-    switch (sp) {
-      case 'surf':
-        this.sportService.surf++;
-        break;
-      case 'kitesurf':
-        this.sportService.kitesurf++;
-        break;
-      case 'windsurf':
-        this.sportService.windsurf++;
-        break;
-    }
 
     this.sportService.sportSelected = sp;
     this.sportService.saveSport(sp);

@@ -27,6 +27,7 @@ import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinne
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { VipComponent } from './vip/vip.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
+import { Loading2SpinnerComponent } from './shared/loading-spinner/loading2-spinner.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { VipPageComponent } from './vip/vip-page/vip-page.component';
     LoadingSpinnerComponent,
     VipComponent,
     VipPageComponent,
+    Loading2SpinnerComponent,
   ],
   imports: [
     BrowserModule,
