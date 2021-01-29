@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
   activate: boolean;
   authSub: Subscription;
   isAuthenticated = false;
-
+  sportSelction: Subscription;
+  active: Subscription;
   constructor(
     private sportService: SportService,
     private activeService: ActivateService,
@@ -24,10 +25,12 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.sportService.sportChosen.subscribe((sport: string) => {
-      this.sportChosen = sport;
-    });
-    this.activeService.active.subscribe((act) => {
+    this.sportSelction = this.sportService.sportChosen.subscribe(
+      (sport: string) => {
+        this.sportChosen = sport;
+      }
+    );
+    this.active = this.activeService.active.subscribe((act) => {
       this.activate = act;
     });
     this.authSub = this.authService.user.subscribe((user) => {
@@ -45,5 +48,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.authSub.unsubscribe();
+    this.sportSelction.unsubscribe();
+    this.active.unsubscribe();
   }
 }

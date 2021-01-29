@@ -25,6 +25,7 @@ export class SurveyComponent implements OnInit, CanComponentDeactivate {
     this.sp = this.sportService.sportSelected;
     this.activeStatus = this.activateService.act;
     this.sportService.getSport().subscribe((sp: string[]) => {
+      let sporLen = sp.length;
       for (let sport of sp) {
         if (sport === 'surf') {
           this.surf++;
@@ -34,6 +35,10 @@ export class SurveyComponent implements OnInit, CanComponentDeactivate {
           this.windsurf++;
         }
       }
+      this.surf = parseFloat(((this.surf / sporLen) * 100).toFixed(1));
+      this.kitesurf = parseFloat(((this.kitesurf / sporLen) * 100).toFixed(1));
+      this.windsurf = parseFloat(((this.windsurf / sporLen) * 100).toFixed(1));
+
       this.isLoading = false;
     });
   }

@@ -1,3 +1,47 @@
+<form #s="ngForm" (ngSubmit)="sport(s)">
+  <div *ngIf="!s.valid">
+    <p appBestHighlight>Please select either value</p>
+  </div>
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="surf"
+      name="sport"
+      required
+      ngModel
+    />
+    <label class="custom-control-label" for="surf">Surf</label>
+  </div>
+
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="kitesurf"
+      name="sport"
+      ngModel
+      required
+    />
+    <label class="custom-control-label" for="kitesurf">Kitesurf</label>
+  </div>
+  <div>
+    <input
+      type="radio"
+      class="custom-control-input"
+      value="windsurf"
+      name="sport"
+      ngModel
+      required
+    />
+    <label class="custom-control-label" for="windsurf">Windsurf</label>
+  </div>
+
+  <button type="submit" class="btn btn-warning" [disabled]="!s.valid">
+    Choose Sport
+  </button>
+</form>
+<hr />
 <div class="row">
   <div class="col-xs-12">
     <form (ngSubmit)="onAdd_UpdateItem(f)" #f="ngForm">
@@ -61,45 +105,3 @@
     <hr />
   </div>
 </div>
-<form #s="ngForm" (ngSubmit)="sport(s)">
-  <div>
-    <input
-      type="radio"
-      class="custom-control-input"
-      value="surf"
-      name="sport"
-      required
-      ngModel
-    />
-    <label class="custom-control-label" for="surf">Surf</label>
-  </div>
-
-  <div>
-    <input
-      type="radio"
-      class="custom-control-input"
-      value="kitesurf"
-      name="sport"
-      ngModel
-      required
-    />
-    <label class="custom-control-label" for="kitesurf">Kitesurf</label>
-  </div>
-  <div>
-    <input
-      type="radio"
-      class="custom-control-input"
-      value="windsurf"
-      name="sport"
-      ngModel
-      required
-    />
-    <label class="custom-control-label" for="windsurf">Windsurf</label>
-  </div>
-  <div *ngIf="!s.valid">
-    <p appBestHighlight>Please select either value</p>
-  </div>
-  <button type="submit" class="btn btn-warning" [disabled]="!s.valid">
-    Choose Sport
-  </button>
-</form>

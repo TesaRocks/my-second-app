@@ -20,7 +20,7 @@
         <li *ngIf="activate && isAuthenticated">
           <a appBestHighlight>Disclaimer Read</a>
         </li>
-        <li *ngIf="sportChosen; else info">
+        <li *ngIf="sportChosen && isAuthenticated; else info">
           <a appDontClick>Your love most: {{ sportChosen }}</a>
         </li>
         <ng-template #info

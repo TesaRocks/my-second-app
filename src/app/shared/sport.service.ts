@@ -1,7 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Item } from './item.model';
 
 @Injectable({ providedIn: 'root' })
 export class SportService {
