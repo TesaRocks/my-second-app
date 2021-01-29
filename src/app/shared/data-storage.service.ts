@@ -1,16 +1,11 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { exhaustMap, map, take, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Trip } from '../trips/trips.model';
 import { TripsService } from '../trips/trips.service';
-import { AuthService } from '../auth/auth.service';
 @Injectable({ providedIn: 'root' })
 export class DataStorageService {
-  constructor(
-    private http: HttpClient,
-    private tripsService: TripsService,
-    private authService: AuthService
-  ) {}
+  constructor(private http: HttpClient, private tripsService: TripsService) {}
   storeTrips() {
     const trips = this.tripsService.getTrips();
     this.http
