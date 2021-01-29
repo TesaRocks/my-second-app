@@ -4,22 +4,42 @@
 </ng-template>
 <div class="row">
   <div class="col-xs-12">
-    <h3>Our readers prefer:</h3>
+    <h4>Our readers prefer:</h4>
   </div>
 </div>
-<div *ngIf="isLoading" style="text-align: left">
+<div *ngIf="isLoading" style="text-align: center">
   <app-loading2-spinner></app-loading2-spinner>
 </div>
 <div class="row" *ngIf="!isLoading">
-  <div class="col-xs-10">
-    <ul>
-      <li>Surfing total: {{ surf }}</li>
-      <li>Kitesurfing: {{ kitesurf }}</li>
-      <li>Windsurfing: {{ windsurf }}</li>
-    </ul>
+  <div class="col-xs-12">
+    <div class="col-xs-3">
+      <span
+        class="badge rounded-pill bg-primary"
+        style="color: lightblue; font-size: 20px"
+        >Surf Total: {{ surf }}</span
+      >
+    </div>
+    <div class="col-xs-3">
+      <span
+        class="badge rounded-pill bg-warning text-dark"
+        style="color: orange; font-size: 20px"
+        >KiteSurf Total: {{ kitesurf }}</span
+      >
+    </div>
+    <div class="col-xs-3">
+      <span
+        class="badge rounded-pill bg-danger"
+        style="color: yellowgreen; font-size: 20px"
+        >Windsurf Total:{{ windsurf }}</span
+      >
+    </div>
   </div>
 </div>
-<div class="row">
+<hr />
+<div
+  class="row"
+  style="text-align: center; margin-right: 300px; margin-top: 90px"
+>
   <div class="col-xs-12">
     <button class="btn btn-danger" (click)="onActivate()">Disclaimer</button>
   </div>
