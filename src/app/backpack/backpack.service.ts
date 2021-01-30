@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { DataStorageService } from '../shared/data-storage.service';
 import { Item } from '../shared/item.model';
 
 @Injectable({ providedIn: 'root' })
@@ -21,6 +20,7 @@ export class BackpackService {
     this.itemsChanged.next(this.items.slice());
   }
   addManyItems(item: Item[]) {
+    //const it = item;
     this.items.push(...item);
     this.itemsChanged.next(this.items.slice());
   }

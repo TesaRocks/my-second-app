@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { BackpackService } from '../backpack/backpack.service';
+import { DataStorageService } from '../shared/data-storage.service';
 import { Item } from '../shared/item.model';
 import { Trip } from './trips.model';
 @Injectable({ providedIn: 'root' })

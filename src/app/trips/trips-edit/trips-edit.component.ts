@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
@@ -17,7 +18,8 @@ export class TripsEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private tripsService: TripsService,
-    private router: Router
+    private router: Router,
+    private dataStorageService: DataStorageService
   ) {}
 
   ngOnInit(): void {
@@ -83,6 +85,7 @@ export class TripsEditComponent implements OnInit {
       this.tripsService.updateTrip(this.id, this.tripForm.value);
     } else {
       this.tripsService.addTrip(this.tripForm.value);
+      this.dataStorageService.storeTrips();
     }
     this.onCancel();
   }

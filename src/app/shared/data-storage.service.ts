@@ -50,11 +50,13 @@ export class DataStorageService {
         console.log(it);
       });
   }
-  // updateItems(){
-  //   const item = this.
-  //   this.http.post('https://my-second-app-9ade6-default-rtdb.firebaseio.com/items.json',
-  //   item)
-  // }
+  updateItems(item: Item[]) {
+    //const item: Item[] = [new Item('boardshorts', 3), new Item('wax', 2)];
+    return this.http.post(
+      'https://my-second-app-9ade6-default-rtdb.firebaseio.com/items.json',
+      item
+    );
+  }
   fetchItems() {
     return this.http
       .get<Item[]>(

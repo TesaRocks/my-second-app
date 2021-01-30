@@ -28,6 +28,8 @@ export class TripsDetailComponent implements OnInit {
   }
   onAdd() {
     this.tripsService.addItemToBackpack(this.trip.items);
+    //this.dataStorageService.updateItems(this.trip.items);
+    this.dataStorageService.storeItems();
   }
   onEditTrip() {
     this.router.navigate(['edit'], { relativeTo: this.route });
