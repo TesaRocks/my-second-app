@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Trip } from '../trips.model';
 import { TripsService } from '../trips.service';
 
@@ -15,7 +16,8 @@ export class TripsDetailComponent implements OnInit {
   constructor(
     private tripsService: TripsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private dataStorageService: DataStorageService
   ) {}
 
   ngOnInit(): void {

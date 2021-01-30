@@ -4,6 +4,7 @@ import { BackpackService } from '../backpack.service';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { SportService } from 'src/app/shared/sport.service';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-backpack-edit',
@@ -18,7 +19,8 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
   editedItem: Item;
   constructor(
     private backpackService: BackpackService,
-    private sportService: SportService
+    private sportService: SportService,
+    private dataStorageService: DataStorageService
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
     } else {
       this.backpackService.addItems(newItem);
     }
+    this.dataStorageService.storeItems();
     this.editMode = false;
     form.reset();
   }
@@ -49,6 +52,7 @@ export class BackpackEditComponent implements OnInit, OnDestroy {
   }
   onDelete() {
     this.backpackService.deleteItem(this.editIndex);
+    this.dataStorageService.storeItems();
     this.onClear();
   }
   sport(form: NgForm) {

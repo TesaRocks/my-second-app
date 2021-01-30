@@ -1,14 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { DataStorageService } from '../shared/data-storage.service';
 import { Item } from '../shared/item.model';
 
 @Injectable({ providedIn: 'root' })
 export class BackpackService {
   editItem = new Subject<number>();
   itemsChanged = new Subject<Item[]>();
-  private items: Item[] = [new Item('boardshorts', 3), new Item('wax', 2)];
+  //private items: Item[] = [new Item('boardshorts', 3), new Item('wax', 2)];
+  private items: Item[] = [];
   getItems() {
     return this.items.slice();
+  }
+  setItems(items: Item[]) {
+    this.items = items;
+    this.itemsChanged.next(this.items.slice());
   }
   addItems(it: Item) {
     this.items.push(it);
