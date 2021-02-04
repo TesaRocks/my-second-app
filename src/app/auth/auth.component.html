@@ -32,6 +32,7 @@
           minlength="6"
         />
       </div>
+      <div *ngIf="authForm.touched" class="alert alert-danger" appBestHighlight><p>Please enter a six character/digit password</p></div>
       <div>
         <button
           class="btn btn-primary"
@@ -45,6 +46,7 @@
           Switch to {{ isLogMode ? "Sign Up" : "Login" }}
         </button>
       </div>
+
     </form>
   </div>
 </div>
