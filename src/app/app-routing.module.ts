@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
-import { BackpackComponent } from './backpack/backpack.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { SurveyComponent } from './survey/survey.component';
@@ -11,11 +10,6 @@ import { VipComponent } from './vip/vip.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/trips', pathMatch: 'full' },
-  {
-    path: 'backpack',
-    component: BackpackComponent,
-    canActivate: [AuthGuard],
-  },
   {
     path: 'survey',
     component: SurveyComponent,

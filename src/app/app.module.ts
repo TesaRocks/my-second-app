@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { BackpackComponent } from './backpack/backpack.component';
-import { BackpackEditComponent } from './backpack/backpack-edit/backpack-edit.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BasicHighlightDirective } from './shared/basic-highlight.directive';
@@ -23,13 +21,12 @@ import { VipPageComponent } from './vip/vip-page/vip-page.component';
 import { Loading2SpinnerComponent } from './shared/loading-spinner/loading2-spinner.component';
 import { AlertComponent } from './shared/alert/alert.component';
 import { TripsModule } from './trips/trips.module';
+import { BackpackModule } from './backpack/backpack.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BackpackComponent,
-    BackpackEditComponent,
     BasicHighlightDirective,
     BestHighlightDirective,
     DropdownDirective,
@@ -47,6 +44,7 @@ import { TripsModule } from './trips/trips.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    BackpackModule,
     TripsModule,
     AppRoutingModule,
     FormsModule,

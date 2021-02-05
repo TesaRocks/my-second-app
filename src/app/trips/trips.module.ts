@@ -27,14 +27,5 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     TripsRoutingModule,
   ],
-  exports: [
-    TripsComponent,
-    TripsListComponent,
-    TripsDetailComponent,
-    TripsItemComponent,
-    TripsStartComponent,
-    TripsEditComponent,
-    TripRaComponent,
-  ],
 })
 export class TripsModule {}
