@@ -47,10 +47,10 @@ import { TripsModule } from './trips/trips.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    TripsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    TripsModule
   ],
   providers: [
     CanDeactivateGuard,
