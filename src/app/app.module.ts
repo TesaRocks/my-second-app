@@ -5,7 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SurveyComponent } from './survey/survey.component';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthComponent } from './auth/auth.component';
@@ -14,13 +13,13 @@ import { VipComponent } from './vip/vip.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
 import { TripsModule } from './trips/trips.module';
 import { BackpackModule } from './backpack/backpack.module';
+import { SurveyModule } from './survey/survey.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    SurveyComponent,
     PageNotFoundComponent,
     AuthComponent,
     VipComponent,
@@ -29,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    SurveyModule,
     BackpackModule,
     TripsModule,
     AppRoutingModule,

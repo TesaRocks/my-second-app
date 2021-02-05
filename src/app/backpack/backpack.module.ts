@@ -9,7 +9,6 @@ import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [BackpackComponent, BackpackEditComponent],
   imports: [
-    RouterModule,
     FormsModule,
     RouterModule.forChild([
       {
