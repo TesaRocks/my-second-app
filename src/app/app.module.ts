@@ -12,9 +12,7 @@ import { TripsModule } from './trips/trips.module';
 import { BackpackModule } from './backpack/backpack.module';
 import { SurveyModule } from './survey/survey.module';
 import { SharedModule } from './shared/shared.module';
-//import { CoreModule } from './core.module';
-import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { CoreModule } from './core.module';
 import { AuthModule } from './auth/auth.module';
 
 @NgModule({
@@ -28,7 +26,7 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     BrowserModule,
     HttpClientModule,
-    //  CoreModule,
+    CoreModule,
     AuthModule,
     SurveyModule,
     BackpackModule,
@@ -37,14 +35,7 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     SharedModule,
   ],
-  providers: [
-    CanDeactivateGuard,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-  ],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,7 +3,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CanDeactivateGuard } from './shared/can-deactivate-guard.service';
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 
-NgModule({
+@NgModule({
   providers: [
     CanDeactivateGuard,
     {
@@ -12,5 +12,5 @@ NgModule({
       multi: true,
     },
   ],
-});
+})
 export class CoreModule {}
