@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VipComponent } from './vip/vip.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
-import { TripsModule } from './trips/trips.module';
 import { BackpackModule } from './backpack/backpack.module';
 import { SurveyModule } from './survey/survey.module';
 import { SharedModule } from './shared/shared.module';
@@ -30,7 +29,6 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     SurveyModule,
     BackpackModule,
-    TripsModule,
     AppRoutingModule,
     FormsModule,
     SharedModule,

@@ -25,7 +25,7 @@
         </li>
         <ng-template #info
           ><li>
-            <a appBestHighlight>Please answer Survey</a>
+            <a *ngIf="isAuthenticated" appBestHighlight>Please answer Survey</a>
           </li></ng-template
         >
       </ul>

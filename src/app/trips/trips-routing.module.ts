@@ -8,7 +8,7 @@ import { TripsComponent } from './trips.component';
 import { AuthGuard } from '../auth/auth.guard';
 const routes: Routes = [
   {
-    path: 'trips',
+    path: '',
     component: TripsComponent,
     canActivate: [AuthGuard],
     children: [

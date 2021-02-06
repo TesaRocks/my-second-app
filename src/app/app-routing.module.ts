@@ -1,14 +1,20 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
 import { VipComponent } from './vip/vip.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/trips', pathMatch: 'full' },
+  {
+    path: 'trips',
+    loadChildren: () =>
+      import('./trips/trips.module').then((m) => m.TripsModule),
+  },
 
-  { path: 'vip', component: VipComponent },
-  { path: 'vipPage', component: VipPageComponent },
+  { path: 'vip', component: VipComponent, canActivate: [AuthGuard] },
+  { path: 'vipPage', component: VipPageComponent, canActivate: [AuthGuard] },
   {
     path: 'not-found',
     component: PageNotFoundComponent,
