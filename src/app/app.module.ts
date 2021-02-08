@@ -10,6 +10,7 @@ import { VipComponent } from './vip/vip.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CoreModule } from './core.module';
     FormsModule,
     SharedModule,
   ],
+  providers: [LoggingService],
 
   bootstrap: [AppComponent],
 })

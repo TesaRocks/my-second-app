@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { LoggingService } from '../logging.service';
 import { ActivateService } from '../shared/activate.service';
 import { DataStorageService } from '../shared/data-storage.service';
 
@@ -20,7 +21,8 @@ export class BackpackComponent implements OnInit, OnDestroy {
   constructor(
     private backpackService: BackpackService,
     private activateService: ActivateService,
-    private dataStorageService: DataStorageService
+    private dataStorageService: DataStorageService,
+    private loggingService: LoggingService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +36,7 @@ export class BackpackComponent implements OnInit, OnDestroy {
       }
     );
     this.activate = this.activateService.act;
+    this.loggingService.printLog('Hello from ngonit Backpack component');
   }
   onEditItem(id: number) {
     this.backpackService.editItem.next(id);
