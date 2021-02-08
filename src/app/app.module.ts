@@ -8,11 +8,8 @@ import { FormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VipComponent } from './vip/vip.component';
 import { VipPageComponent } from './vip/vip-page/vip-page.component';
-import { BackpackModule } from './backpack/backpack.module';
-import { SurveyModule } from './survey/survey.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core.module';
-import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -26,9 +23,6 @@ import { AuthModule } from './auth/auth.module';
     BrowserModule,
     HttpClientModule,
     CoreModule,
-    AuthModule,
-    SurveyModule,
-    BackpackModule,
     AppRoutingModule,
     FormsModule,
     SharedModule,

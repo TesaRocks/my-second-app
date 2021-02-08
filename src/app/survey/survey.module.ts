@@ -10,7 +10,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     RouterModule.forChild([
       {
-        path: 'survey',
+        path: '',
         component: SurveyComponent,
         canActivate: [AuthGuard],
         canDeactivate: [CanDeactivateGuard],

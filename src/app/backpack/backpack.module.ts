@@ -12,7 +12,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     RouterModule.forChild([
       {
-        path: 'backpack',
+        path: '',
         component: BackpackComponent,
         canActivate: [AuthGuard],
       },

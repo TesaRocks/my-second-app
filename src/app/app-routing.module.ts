@@ -12,6 +12,20 @@ const routes: Routes = [
     loadChildren: () =>
       import('./trips/trips.module').then((m) => m.TripsModule),
   },
+  {
+    path: 'backpack',
+    loadChildren: () =>
+      import('./backpack/backpack.module').then((m) => m.BackpackModule),
+  },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'survey',
+    loadChildren: () =>
+      import('./survey/survey.module').then((m) => m.SurveyModule),
+  },
 
   { path: 'vip', component: VipComponent, canActivate: [AuthGuard] },
   { path: 'vipPage', component: VipPageComponent, canActivate: [AuthGuard] },
