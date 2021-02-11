@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { LoggingService } from '../logging.service';
 import { ActivateService } from '../shared/activate.service';
 import { DataStorageService } from '../shared/data-storage.service';
-
 import { Item } from '../shared/item.model';
 import { BackpackService } from './backpack.service';
 
@@ -22,13 +21,12 @@ export class BackpackComponent implements OnInit, OnDestroy {
     private backpackService: BackpackService,
     private activateService: ActivateService,
     private dataStorageService: DataStorageService,
-    private loggingService: LoggingService
+    private store: Store<{ backpack: { items: Item[] } }>
   ) {}
 
   ngOnInit(): void {
-    this.getData = this.dataStorageService.fetchItems().subscribe((it) => {
-      console.log(it);
-    });
+    //this.store.select('backpack')
+    this.getData = this.dataStorageService.fetchItems().subscribe((it) => {});
     this.items = this.backpackService.getItems();
     this.itemsUpdate = this.backpackService.itemsChanged.subscribe(
       (item: Item[]) => {
@@ -36,7 +34,6 @@ export class BackpackComponent implements OnInit, OnDestroy {
       }
     );
     this.activate = this.activateService.act;
-    this.loggingService.printLog('Hello from ngonit Backpack component');
   }
   onEditItem(id: number) {
     this.backpackService.editItem.next(id);
